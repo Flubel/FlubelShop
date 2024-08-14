@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+}
+#lftbrcntnradmn{
+    background-color: red;
+    width: 260px;
+    height: 100vh;
+}
+#miainbdyadmnpnl{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+#rgtbrcntnrmnadmn{
+    height: 100vh;
+    display: flex;
+    flex: 1;
+}
+#navbrcv{
+    width: 100%;
+    height: 75px;
+    background-color: gray;
+}
+#maintpsmbl{
+}

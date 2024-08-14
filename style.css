@@ -1,0 +1,690 @@
+@font-face {
+    font-family: "geist";
+    src: url(./fonts/GeistVariableVF.ttf);
+}
+
+@font-face {
+    font-family: "gothic";
+    src: url(./fonts/OldLondon.ttf);
+}
+
+@font-face {
+    font-family: "merriweather";
+    src: url(./fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'ancm';
+    src: url('./fonts/logo/Ancient-Medium.ttf.woff')
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-VariableFont_wght.ttf')
+}
+
+* {
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#navbar {
+    width: 100vw;
+    height: 69px;
+    display: flex;
+    border-bottom: 1px solid #d6d6d6;
+    position: sticky;
+}
+
+#maintxtnvbradmn {
+
+    transition: all .3s ease;
+}
+
+#maintxtnvbradmn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#navbradmn {
+    width: 100vw;
+    height: 69px;
+    display: flex;
+    border-bottom: 1px solid #d6d6d6;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    font-family: ancm;
+    font-size: 65px;
+    overflow-y: hidden;
+    user-select: none;
+}
+
+#discountbarifso {
+    width: 100vw;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    background-color: #ebebeb;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#mainbody {
+    width: 100vw;
+    height: calc(100vh - 113px);
+    max-width: 1800px;
+}
+
+#mainbdyacc {
+    width: 100vw;
+    height: fit-content;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#maincntnraccinfdtls {
+    background-color: rgb(219, 219, 219);
+    height: 600px;
+    width: 80%;
+    max-width: 1000px;
+    min-width: 800px;
+    border-radius: 7px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    display: flex;
+}
+
+#lftnvbrsd,
+#rgtnvbrsd {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+#mainwebttlflb {
+    width: fit-content;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: merriweather;
+    font-size: 24px;
+    min-width: 100px;
+}
+
+#lftsdmnnvbr,
+#rgtsdmnnvbr {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+#middlebtnsmn {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#middlebtnsmn div {
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: geist;
+    font-weight: 700;
+    user-select: none;
+    font-size: 15px;
+}
+
+#middlebtnsmn {
+    display: flex;
+    justify-content: space-around;
+}
+
+#middlebtnsmn div {
+    position: relative;
+    /* padding-bottom: 10px; */
+    cursor: pointer;
+    color: black;
+}
+
+#middlebtnsmn div::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: black;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    color: black;
+}
+
+#middlebtnsmn div:hover {
+    color: black;
+    /* Text color on hover */
+}
+
+#middlebtnsmn div:hover::after {
+    width: 100%;
+}
+
+#middlebtnsmn:hover div {
+    color: rgb(150, 150, 150);
+    /* Change all to gray on hover */
+}
+
+#middlebtnsmn div:hover {
+    color: black;
+    /* Override hovered element to black */
+}
+
+#rgtsdmnnvbr {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#rgtsdmnnvbr div {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#mainaccbodylgsg {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    /* Hide overflow from the main container */
+}
+
+#lftsdmndvcntntr {
+    width: 49vw;
+    height: 100vh;
+}
+
+#rgtsdmndvcntntr {
+    width: 51vw;
+    height: 100vh;
+    /* Make it 100vh to fit the screen height */
+    overflow-y: scroll;
+}
+
+#mainfrmfrlgin {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainrgtcntnt {
+    width: fit-content;
+    height: fit-content;
+    padding: 80px;
+}
+
+#lftsdmndvcntntr {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./assets/pexels-igrejapreta-2522085.jpg);
+}
+
+#mainquotetxt {
+    color: white;
+    font-family: geist;
+    font-size: 40px;
+    font-weight: 600;
+    width: 70%;
+    text-shadow: 1px 1px 5px black;
+}
+
+#mainlgocntnr {
+    width: 375px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: ancm;
+    font-size: 100px;
+    line-height: 5px;
+    overflow-y: hidden;
+}
+
+#mainttlabtstracc,
+#mainttlabtstraccadmn {
+    width: 375px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Montserrat";
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+#mainttlabtstraccadmn {
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+#mainbdyadmnpnllgin {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#loginaccmngr {
+    width: 375px;
+    height: 274px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#loginaccmngradmn {
+    width: 375px;
+    height: calc(274px - 40px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
+}
+
+
+#signupaccmngr {
+    width: 375px;
+    /* height: 575px; */
+    height: 274px;
+    opacity: 0%;
+    display: none;
+    flex-direction: column;
+    transition: all .5s ease;
+}
+
+#lginorsgnupswtchrbg {
+    width: 375px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.toggle-container {
+    position: relative;
+    width: 245px;
+    height: 44px;
+    overflow-y: hidden;
+    user-select: none;
+}
+
+.toggle-switch {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    overflow-y: hidden;
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+    color: rgb(126, 126, 126);
+    font-weight: bold;
+    font-family: "Montserrat";
+    z-index: 999;
+}
+
+.toggle-option:hover {
+    color: black;
+}
+
+.toggle-button {
+    position: absolute;
+    width: calc(50% - 4px);
+    height: 85%;
+    margin-left: 4px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    transition: transform 0.3s;
+    /* margin-top: 0.5%; */
+}
+
+.toggle-switch:checked+.toggle-label .toggle-button {
+    transform: translateX(100%);
+}
+
+.active {
+    color: black;
+}
+
+#inputbgcntnr {
+    width: 100%;
+    height: 78px;
+}
+
+#ttlinptfld {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: geist, roboto;
+    font-weight: 600;
+    color: rgb(37, 37, 37);
+    margin-left: 1px;
+}
+
+#loginaccmngr input,
+#signupaccmngr input,
+#loginaccmngradmn input {
+    width: calc(94% - 1px);
+    height: 50%;
+    margin-top: 3px;
+    outline: none;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    font-family: geist;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #c0c0c0;
+    /* Default border */
+    transition: border 0.3s, outline-offset 0.3s;
+    margin-left: 1px;
+}
+
+#loginaccmngradmn input {
+    width: calc(93.5% - 1px);
+}
+
+#inputbgcntnrpass,
+#inputbgcntnrbtm {
+    width: 100%;
+    height: 78px;
+    margin-top: 10px;
+}
+
+#loginaccmngr input:focus,
+#signupaccmngr input:focus,
+#loginaccmngradmn input:focus {
+    border: 1px solid black;
+    /* Change border color */
+    outline: 1px solid black;
+    /* Add an outline */
+    outline-offset: 0px;
+    /* Shadow to simulate the growing border */
+}
+
+#forgotpasscntnrbg {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: geist;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+a {
+    color: black;
+}
+
+#mainlgincntnbtnbgcntnr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainlgincntnbtnbgcntnradmn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#mainlginbtn,
+#mainsginbtn,
+#mainlginbtnadmnauth {
+    background-color: black;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#mainlginbtnadmnauth {
+    height: 70%;
+}
+
+#mainlginbtn:hover,
+#mainsginbtn:hover,
+#mainlginbtnadmnauth:hover {
+    background-color: rgb(31, 31, 31);
+}
+
+#mainsginbtn {
+    height: 55%;
+}
+
+#lftsdmndvcntntr {
+    position: relative;
+    /* Make the container relative */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Example height */
+}
+
+#pausplybtn {
+    position: absolute;
+    /* Position the button absolutely within the container */
+    top: 10px;
+    /* Distance from the top */
+    right: 10px;
+    /* Distance from the right */
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+#usertocaccptbgcntnr {
+    width: 100%;
+    height: 12%;
+    display: flex;
+
+}
+
+#scceptocstat {
+    width: 88%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: geist;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+
+/* From Uiverse.io by mobinkakei */
+.toggler {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggler input {
+    display: none;
+}
+
+.toggler label {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 26px;
+    border: 1px solid #d6d6d6;
+    border-radius: 36px;
+    background: #e4e8e8;
+    cursor: pointer;
+}
+
+.toggler label::after {
+    display: block;
+    border-radius: 100%;
+    background-color: #d7062a;
+    content: '';
+    animation-name: toggler-size;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out;
+    animation-direction: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.toggler label::after,
+.toggler label .toggler-on,
+.toggler label .toggler-off {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 26px;
+    height: 26px;
+    transform: translateY(-50%) translateX(-50%);
+    transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked+label::after,
+.toggler input:checked+label .toggler-on,
+.toggler input:checked+label .toggler-off {
+    left: 75%;
+}
+
+.toggler input:checked+label::after {
+    background-color: #50ac5d;
+    animation-name: toggler-size2;
+}
+
+.toggler .toggler-on,
+.toggler .toggler-off {
+    opacity: 1;
+    z-index: 2;
+}
+
+.toggler input:checked+label .toggler-off,
+.toggler input:not(:checked)+label .toggler-on {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.toggler .path {
+    fill: none;
+    stroke: #fefefe;
+    stroke-width: 7px;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+@keyframes toggler-size {
+
+    0%,
+    100% {
+        width: 26px;
+        height: 26px;
+    }
+
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@keyframes toggler-size2 {
+
+    0%,
+    100% {
+        width: 26px;
+        height: 26px;
+    }
+
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+}
+#mainherovdplr{
+    background-color: red;
+    width: 100%;
+    height: 200px;
+}
