@@ -6,4 +6,3 @@ iconnum2.addEventListener('click', () => {
 iconnum3.addEventListener('click', () => {
     window.location.href = '/fs/account.html';
 });
-

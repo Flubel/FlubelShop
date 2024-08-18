@@ -63,54 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// eyehidepass.addEventListener('click', () => {
-//     document.getElementById('passwordlogin').type = 'password'
-//     eyeshwpass.style.display = 'flex'
-//     eyehidepass.style.display = 'none'
-// })
-
-// eyeshwpass.addEventListener('click', () => {
-
-//     document.getElementById('passwordlogin').type = 'text'
-//     eyeshwpass.style.display = 'none'
-//     eyehidepass.style.display = 'flex'
-// })
-
-
-
-
-// function validateEmail(email) {
-//     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-//     return re.test(String(email).toLowerCase());
-// }
-
-// function validateForm() {
-//     const emailField = document.getElementById('emaillogin');
-//     const passwordField = document.getElementById('passwordlogin');
-//     const loginButton = document.getElementById('loginmnbtn');
-
-//     if (validateEmail(emailField.value) && passwordField.value !== '' && passwordField.value.length >= 4) {
-//         loginButton.style.filter = 'invert(0%)'
-//         loginButton.style.cursor = 'pointer'
-//     } else {
-//         loginButton.style.filter = 'invert(100%)'
-//         loginButton.style.cursor = 'not-allowed'
-//     }
-// }
-
-// document.getElementById('emaillogin').addEventListener('input', validateForm);
-// document.getElementById('passwordlogin').addEventListener('input', validateForm);
-// const loginButton = document.getElementById('loginmnbtn');
-// loginButton.addEventListener('click',()=>{
-//     if(loginButton.style.filter === 'invert(0%)'){
-//         console.log('ok')
-//     }else{
-//         console.log('not ok')
-//     }
-// })
-
-
-
 
 document.getElementById('login-option').addEventListener('click', function () {
     document.getElementById('toggle-switch').checked = false;

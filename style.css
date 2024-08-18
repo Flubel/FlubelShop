@@ -410,12 +410,12 @@ body {
 
 #inputbgcntnr {
     width: 100%;
-    height: 78px;
+    height: 82px;
 }
 
 #ttlinptfld {
     width: 100%;
-    height: 30%;
+    height: 22%;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -424,12 +424,19 @@ body {
     color: rgb(37, 37, 37);
     margin-left: 1px;
 }
+#errtxteml,#errtxtpass{
+    color: #ff5555;
+    font-size: 12px;
+    display: none;
+    font-family: geist;
+    margin-top: 1px;
+}
 
 #loginaccmngr input,
 #signupaccmngr input,
 #loginaccmngradmn input {
-    width: calc(94% - 1px);
-    height: 50%;
+    width: calc(94% - 2px);
+    height: 48%;
     margin-top: 3px;
     outline: none;
     border: 1px solid #c0c0c0;
@@ -438,32 +445,29 @@ body {
     font-size: 16px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #c0c0c0;
     /* Default border */
     transition: border 0.3s, outline-offset 0.3s;
     margin-left: 1px;
 }
 
 #loginaccmngradmn input {
-    width: calc(93.5% - 1px);
+    width: calc(93.5% - 2px);
+    
 }
 
 #inputbgcntnrpass,
 #inputbgcntnrbtm {
     width: 100%;
-    height: 78px;
-    margin-top: 10px;
+    height: 82px;
+    margin-top: 5px;
 }
 
 #loginaccmngr input:focus,
 #signupaccmngr input:focus,
 #loginaccmngradmn input:focus {
     border: 1px solid black;
-    /* Change border color */
     outline: 1px solid black;
-    /* Add an outline */
     outline-offset: 0px;
-    /* Shadow to simulate the growing border */
 }
 
 #forgotpasscntnrbg {
@@ -514,6 +518,8 @@ a {
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
+    outline: none;
+    border: none;
 }
 
 #mainlginbtnadmnauth {
@@ -683,8 +689,432 @@ a {
         height: 20px;
     }
 }
-#mainherovdplr{
-    background-color: red;
+
+#mainherovdplr {
     width: 100%;
     height: 200px;
+}
+
+#maincntnrfrinf {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+}
+
+#tmmninfbg {
+    width: 90%;
+    max-width: 850px;
+    height: 100%;
+}
+
+#tpmninfcntnr {
+    width: 100%;
+    height: 200px;
+    margin-top: 60px;
+}
+#miansvgicntp{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mntxtfrsrvcs{
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+    height: 25%;
+    font-family: geist;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ypdastttsmn{
+    width: 100%;
+    height: 10%;
+    font-size: 14px;
+    font-family: geist;
+    display: flex;
+    align-items: center;
+    color: #5a5a5a;
+    justify-content: center;
+    font-weight: 550;
+}
+#btmcnnrmninfstts{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mninnrcntnr{
+    /* background-color: rgb(233, 233, 233); */
+    width: 95%;
+    min-height: 10px;
+    height: fit-content;
+    border-radius: 12px;
+    border: 1px solid rgb(206, 206, 206);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#cntnrfldinf1{
+    transition: all .1s ease;
+    width: calc(100% - 30px);
+    height: 65px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+}
+#cntnrfldinf1:hover{
+    background-color: #dddddd;
+}
+#mnttldb{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: geist;
+    font-weight: 550;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#mnlftsdoprtnlupdn{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+#mnoprtnlstts{
+    background-color: #dddddd;
+    border-radius: 25px;
+    min-width: 10px;
+    height: 40%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mnanthrsvg,#mnanthrsvg1{
+    width: fit-content;
+    margin-left: 5px;
+    margin-right: -5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mntxtoprtnlstts,#mntxtoprtnlstts1{
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: geist;
+    font-size: 13px;
+}
+#loadersthbtnmn{
+    display: none;
+}
+
+#mnothrbtns{
+    /* background-color: green; */
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#mnsdpnllft{
+    width: 15%;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+#hpmecntnrmn,#prodcntnrmn,#prodlstcntnrmn{
+    width: 90%;
+    height: 45px;
+    margin-top: 5px;
+    font-size: 16px;
+    font-family: geist;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#hpmecntnrmn:hover,#prodcntnrmn:hover,#prodlstcntnrmn:hover{
+    background-color: rgb(226, 226, 226);
+}
+#mnlftbrswtchr{
+    background-color: #178ad6;
+    height: 30px;
+    width: 5px;
+    border-radius: 25px;
+    position: absolute;
+    margin-top: 10px;
+    left: 20px;
+}
+#miainbdyadmnpnl{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+#dshbrdprflmnpnl,#mnproductcntnr,#mnproductlstcntnr{
+    flex: 1;
+    height: fit-content;
+    min-height: calc(100vh - 75px);
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(248,248,248);
+    border-top-left-radius: 12px;
+}
+#dshbrdprflmnpnl{
+    display: flex;
+}
+#mnproductcntnr,#mnproductlstcntnr{
+    display: none;
+}
+#prodttl{
+    font-family: geist;
+    color: #333333;
+    width: 90%;
+    font-size: 14px;
+    margin-top: 5px;
+}
+#mnscrlablpn{
+    display: flex;
+    overflow-y: scroll;
+    flex: 1;
+}
+#lftbrcntnradmn{
+    width: 260px;
+    height: 100vh;
+}
+#rgtbrcntnrmnadmn{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+#navbrcv{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    /* background-color: rgb(226, 226, 226); */
+}
+#maintpsmbl{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: ancm;
+}
+#mnsrchbrcntnr{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mnutiltscntnrrgtsd{
+    min-width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-right: 20px;
+}
+#mainadmnpfpshwr{
+    width: 50px;
+    margin: 5px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #178ad6;
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+#admnpnlmnsrchbr{
+    width: 80%;
+    height: 50%;
+    max-width: 800px;
+    outline: none;
+    border: none;
+    padding-right: 10px;
+    font-size: 15px;
+    border-right: 1px solid rgb(150, 150, 150, 0.788);
+    border-bottom: 1px solid rgb(150, 150, 150, 0.788);
+    border-top: 1px solid rgb(150, 150, 150, 0.788);
+    font-family: geist;
+    border-radius: 0px 25px 25px 0px;
+}
+#mnsbmntsrchicn{
+    background-color: white;
+    width: 45px;
+    height: 52%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(150, 150, 150, 0.788);
+    border-bottom: 1px solid rgb(150, 150, 150, 0.788);
+    border-top: 1px solid rgb(150, 150, 150, 0.788);
+    border-radius: 25px 0px 0px 25px;
+}
+
+#mnprfladmninf{
+    width: 95%;
+    max-width: 900px;
+    min-width: 100px;
+    display: flex;
+    height: 300px;
+    align-items: center;
+}
+#lftsdmnlgobg{
+    height: 70%;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-color: #178ad6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    font-size: 6rem;
+    color: white;
+    font-weight: 600;
+}
+
+#bgcntnradmnpfpinf{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2%;
+}
+#othrutltsfradmninf{
+    font-family: geist;
+    height: 65%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+#lftsdmnbtnlgout{
+    min-width: 100px;
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logoutadmnmnbtn{
+    outline: none;
+    border: none;
+    font-family: geist;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff1f1f;
+    color: white;
+    height: 40px;
+    width: 155px;
+    font-size: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .1s ease;
+    margin: 10px;
+}
+#logoutadmnmnbtn:hover{
+    box-shadow: 0px 0px 0px 2px #ff55556b;
+}
+#logoutadmnmnbtn:active{
+    transform: scale(0.9);
+}
+#mnadmnshwusrnm{
+    height: fit-content;
+    font-size: 3.5rem;
+    font-weight: 650;
+    line-height: 4rem;
+}
+#mnadmnshweml{
+    color: #575757;
+    font-size: 15px;
+}
+#mnadmnshwid{
+    
+    color: #575757;
+    font-size: 15px;
+}
+#admnsmnlst{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#admnlstttlmn{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: geist;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#mnadmnbtlcntnt{
+    width: 95%;
+    max-width: 900px;
+    min-width: 100px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-family: geist;
+    align-items: center;
+}
+#tableoutrcntnrttls,#tableoutrcntnrcntnt{
+    width: 90%;
+    height: 55px;
+    justify-content: space-evenly;
+    display: flex;
+    border-bottom: 1px solid #178ad6;
+}
+#idttl,#namttl,#emlttl,#passttl,#idcntnt,#namcntnt,#emlcntnt,#passcntnt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    font-weight: 600;
+    font-size: 18px;
+}
+#idttl,#idcntnt{
+    width: 15%;
+}
+#namttl,#namcntnt{
+    width: 28%;
+}
+#emlttl,#emlcntnt{
+    width: 28%;
+}
+#passttl,#passcntnt{
+    width: 28%;
+}
+#tableoutrcntnrcntnt div{
+    font-weight: 400;
 }
