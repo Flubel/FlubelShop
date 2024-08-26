@@ -16,11 +16,20 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Flubel-Shop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../style.css">
+    <script defer src="./dash.js"></script>
 </head>
 
 <body>
-
+    <div id="successmsg" class="success-message">
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;" width="40px" height="40px"
+            viewBox="0 0 1024 1024">
+            <path fill="white"
+                d="M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512c282.784 0 512-229.216 512-512C1024 229.232 794.784 0 512 0m0 961.008c-247.024 0-448-201.984-448-449.01c0-247.024 200.976-448 448-448s448 200.977 448 448s-200.976 449.01-448 449.01m204.336-636.352L415.935 626.944l-135.28-135.28c-12.496-12.496-32.752-12.496-45.264 0c-12.496 12.496-12.496 32.752 0 45.248l158.384 158.4c12.496 12.48 32.752 12.48 45.264 0c1.44-1.44 2.673-3.009 3.793-4.64l318.784-320.753c12.48-12.496 12.48-32.752 0-45.263c-12.512-12.496-32.768-12.496-45.28 0" />
+        </svg>
+        Product added successfully!
+    </div>
     <div id="miainbdyadmnpnl">
         <div id="lftbrcntnradmn">
             <div id="maintpsmbl">F</div>
@@ -162,73 +171,276 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
 
                 </div>
                 <div id="mnproductcntnr">
-                    Products RAHHHH
+                    <div id="maininnrcntnrfraddprdcts">
+                        <form id="mainfrmprdct" enctype="multipart/form-data" action="add_product.php" method="POST">
+                            <div id="mnuprlblfrprdcts">Add Product</div>
+                            <div id="imgaddrbg">
+                                <div id="mnimgaddrprodttl">Images*</div>
+                                <div id="mnimgaddrprodwrkbg">
+                                    <div id="tpbrimgshwr">
+                                        <div id="img1upld" onclick="triggerFileInput('fileInput1')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                        <div id="img2upld" onclick="triggerFileInput('fileInput2')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                        <div id="img3upld" onclick="triggerFileInput('fileInput3')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                    </div>
+
+                                    <input name="img1" type="file" id="fileInput1" style="display:none"
+                                        onchange="displayImage(this, 'img1upld')" accept="image/*">
+                                    <input name="img2" type="file" id="fileInput2" style="display:none"
+                                        onchange="displayImage(this, 'img2upld')" accept="image/*">
+                                    <input name="img3" type="file" id="fileInput3" style="display:none"
+                                        onchange="displayImage(this, 'img3upld')" accept="image/*">
+
+                                    <div id="tpbrimgshwr">
+                                        <div id="img4upld" onclick="triggerFileInput('fileInput4')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                        <div id="img5upld" onclick="triggerFileInput('fileInput5')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                        <div id="img6upld" onclick="triggerFileInput('fileInput6')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="30%"
+                                                viewBox="0 0 24 24">
+                                                <g fill="none">
+                                                    <path
+                                                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                    <path fill="#6b6b6b"
+                                                        d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                                </g>
+                                            </svg>
+                                            Add Image
+                                        </div>
+                                    </div>
+                                    <input name="img4" type="file" id="fileInput4" style="display:none"
+                                        onchange="displayImage(this, 'img4upld')" accept="image/*">
+                                    <input name="img5" type="file" id="fileInput5" style="display:none"
+                                        onchange="displayImage(this, 'img5upld')" accept="image/*">
+                                    <input name="img6" type="file" id="fileInput6" style="display:none"
+                                        onchange="displayImage(this, 'img6upld')" accept="image/*">
+                                </div>
+                            </div>
+                            <div id="namaddrfrprdctbg">
+                                <div id="mnimgaddrprodttl">Title*</div>
+                                <div id="maininptbgfrnmprdct">
+                                    <input type="text" id="product_title" name="product_title">
+                                </div>
+                            </div>
+
+                            <div id="namaddrfrprdctbgprc">
+                                <div id="mnimgaddrprodttl">Supplier</div>
+                                <div id="maininptbgfrnmprdct">
+                                    <input type="text" value="Flubel-Shop" id="product_supplier"
+                                        name="product_supplier">
+                                </div>
+                            </div>
+                            <div id="descaddrfrprdctbg">
+                                <div id="mnimgaddrprodttldesc">Description*</div>
+                                <div id="maininptbgfrnmprdctdesc">
+                                    <div id="tpbrfroptns">
+                                        <div id="edtbtnmndesc">Edit</div>
+                                        <div id="prwbtnmndesc">Preview</div>
+                                    </div>
+                                    <div id="btntxtareamnbgcntnr">
+                                        <div id="topcntrlsmn">
+                                            <div data-format="bold">BOLD</div>
+                                            <div data-format="italic">ITALICIZED</div>
+                                            <div data-format="underline">UNDERLINE</div>
+                                            <div data-format="strike">STRIKE</div>
+                                        </div>
+                                        <textarea id="dynamic-textarea" name="product_desc"
+                                            placeholder="Description"></textarea>
+                                    </div>
+                                    <div id="mrdwnprwvr">
+                                        <div id="preview" class="preview">
+                                            Nothing to Preview
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="namaddrfrprdctbgprc">
+                                <div id="mnimgaddrprodttl">Category*</div>
+                                <div id="maininptbgfrnmprdctctgry">
+                                    <div id="unsx">UNISEX</div>
+                                    <div id="ml">MALE</div>
+                                    <div id="fml">FEMALE</div>
+                                </div>
+                                <input type="hidden" name="product_category" id="category" value="unisex">
+                            </div>
+
+                            <div id="descaddrfrprdctbg">
+                                <div id="mnimgaddrprodttldesc">Variations*</div>
+                                <div id="maininptbgfrnmprdctctgryvars">
+                                    <div id="mnvartnsfrprdct">
+                                        <div id="ctgry1">
+                                            <div id="tpbrctgrym">
+                                                <div id="clrbgcntnr">
+                                                    <div id="colorttlmn">COLOR &nbsp; <div id="color-display"></div>
+                                                    </div>
+                                                    <div id="colormninpt">
+                                                        <input type="text" name="variations[0][color]"
+                                                            class="color-input">
+                                                    </div>
+                                                </div>
+                                                <div id="szclrbgcntnr">
+                                                    <div id="colorttlmn">SIZE</div>
+                                                    <div id="colormninpt">
+                                                        <div id="contanervarsszs">
+                                                            <div class="size-option" data-size="XS">XS</div>
+                                                            <div class="size-option" data-size="S">S</div>
+                                                            <div class="size-option" data-size="M">M</div>
+                                                            <div class="size-option" data-size="L">L</div>
+                                                            <div class="size-option" data-size="XL">XL</div>
+                                                            <div class="size-option" data-size="2XL">2XL</div>
+                                                        </div>
+                                                        <!-- Hidden input to store selected sizes -->
+
+                                                        <input type="hidden" name="variations[0][xs]" value="0">
+                                                        <input type="hidden" name="variations[0][s]" value="0">
+                                                        <input type="hidden" name="variations[0][m]" value="0">
+                                                        <input type="hidden" name="variations[0][l]" value="0">
+                                                        <input type="hidden" name="variations[0][xl]" value="0">
+                                                        <input type="hidden" name="variations[0][2xl]" value="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="tpbrctgrym">
+                                                <div id="clrbgcntnr">
+                                                    <div id="colorttlmn">QUANTITY</div>
+                                                    <div id="colormninpt">
+                                                        <input type="number" name="variations[0][quantity]">
+                                                    </div>
+                                                </div>
+                                                <div id="clrbgcntnr">
+                                                    <div id="colorttlmn">PRICE($)</div>
+                                                    <div id="colormninpt">
+                                                        <input type="text" name="variations[0][price]"
+                                                            id="currency-input" placeholder="Enter amount">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="addvarmncntnr">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                            viewBox="0 0 24 24">
+                                            <g fill="none">
+                                                <path
+                                                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                <path fill="#6b6b6b"
+                                                    d="M10.5 20a1.5 1.5 0 0 0 3 0v-6.5H20a1.5 1.5 0 0 0 0-3h-6.5V4a1.5 1.5 0 0 0-3 0v6.5H4a1.5 1.5 0 0 0 0 3h6.5z" />
+                                            </g>
+                                        </svg>
+                                        Add Variation
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="mnsvbtn">
+                                <button type="submit" id="mnsvbtnfrprdcts">Add Product</button>
+                            </div>
+
+                        </form>
+                    </div>
+
                 </div>
                 <div id="mnproductlstcntnr">
-                    Product List RAHHHH
+                    <div id="maininnrcntnrfraddprdctslstprdcts">
+                        <div id="mnuprlblfrprdctslst">Product List</div>
+                        <div id="mainprdsctsshwrcntnr">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
+
 </body>
+<!-- Jquery for FUN ;> -->
 <script>
-    function gotohome() {
-        dshbrdprflmnpnl.style.display = 'flex'
-        mnproductcntnr.style.display = 'none'
-        mnproductlstcntnr.style.display = 'none'
-
-        hpmecntnrmn.style.backgroundColor = 'rgb(226,226,226)'
-        prodcntnrmn.style.backgroundColor = 'transparent'
-        prodlstcntnrmn.style.backgroundColor = 'transparent'
-    }
-    function gotoproducts() {
-
-        dshbrdprflmnpnl.style.display = 'none'
-        mnproductcntnr.style.display = 'flex'
-        mnproductlstcntnr.style.display = 'none'
-
-        hpmecntnrmn.style.backgroundColor = 'transparent'
-        prodcntnrmn.style.backgroundColor = 'rgb(226,226,226)'
-        prodlstcntnrmn.style.backgroundColor = 'transparent'
-    }
-    function gotoproductslist() {
-        dshbrdprflmnpnl.style.display = 'none'
-        mnproductcntnr.style.display = 'none'
-        mnproductlstcntnr.style.display = 'flex'
-
-        hpmecntnrmn.style.backgroundColor = 'transparent'
-        prodcntnrmn.style.backgroundColor = 'transparent'
-        prodlstcntnrmn.style.backgroundColor = 'rgb(226,226,226)'
-    }
-    hpmecntnrmn.addEventListener('click', () => {
-        gotohome()
-    })
-    prodcntnrmn.addEventListener('click', () => {
-        gotoproducts()
-    })
-    prodlstcntnrmn.addEventListener('click', () => {
-        gotoproductslist()
-    })
-
-
-    function getQueryParams() {
-        const queryParams = new URLSearchParams(window.location.search);
-        return queryParams;
-    }
-
-    window.onload = () => {
-        const params = getQueryParams();
-        if (params.get('tab') === "home") {
-            gotohome()
-        } else if(params.get('tab') === "products"){
-            gotoproducts()
-        } else if(params.get('tab') === "product_list"){
-            gotoproductslist()
-        }else{
-            gotohome()
-        }
-    }
+    $(document).ready(function(){
+            $('#prodlstcntnrmn').click(function() {
+                console.log('ok')
+                $.ajax({
+                    url: 'fetch_products.php',
+                    type: 'GET',
+                    success: function(response) {
+                        $('#mainprdsctsshwrcntnr').html(response);
+                    },
+                    error: function() {
+                        $('#mainprdsctsshwrcntnr').html('Error loading products.');
+                    }
+                });
+            });
+        });
 </script>
+
+
+<script>
+    <?php if (isset($_SESSION['upload_success']) && $_SESSION['upload_success'] === true): ?>
+        document.getElementById('successmsg').style.display = 'flex';
+
+        setTimeout(function () {
+            document.getElementById('successmsg').style.display = 'none';
+        }, 5000);
+
+        <?php unset($_SESSION['upload_success']); ?>
+    <?php endif; ?>
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/14.0.0/marked.min.js"></script>
 
 </html>
