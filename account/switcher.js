@@ -2,9 +2,9 @@ const elem = document.getElementById('lftsdmndvcntntr');
 const quoteElem = document.getElementById('mainquotetxt');
 
 const images = [
-    './assets/pexels-joao-gustavo-rezende-15265-68389.jpg',
-    './assets/pexels-sebastians-1276518.jpg',
-    './assets/pexels-podnar2018-1424239.jpg'
+    '../assets/pexels-joao-gustavo-rezende-15265-68389.jpg',
+    '../assets/pexels-sebastians-1276518.jpg',
+    '../assets/pexels-podnar2018-1424239.jpg'
 ];
 
 const quotes = [
@@ -114,3 +114,26 @@ function moveToggleButton() {
 }
 var loginOption = document.getElementById('login-option');
 loginOption.classList.add('active');
+
+
+mainsginbtn.addEventListener('click', () => {
+    console.log('signing in lsr')
+})
+
+
+
+function getQueryParams() {
+    const queryParams = new URLSearchParams(window.location.search);
+    return queryParams;
+}
+window.onload = () => {
+    const params = getQueryParams();
+    if (params.get('method') === "login") {
+        document.getElementById('toggle-switch').checked = false;
+        moveToggleButton();
+    } else if (params.get('method') === "signup") {
+        document.getElementById('toggle-switch').checked = true;
+        moveToggleButton();
+    } else {
+    }
+}

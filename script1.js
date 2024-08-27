@@ -4,5 +4,5 @@ iconnum2.addEventListener('click', () => {
 });
 
 iconnum3.addEventListener('click', () => {
-    window.location.href = '/account.html';
+    window.location.href = '/account';
 });
