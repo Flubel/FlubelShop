@@ -1,3 +1,35 @@
+<div id="searchbrmn">
+    <div id="mnsrchbrcntnr">
+        <div id="mnsbmntsrchicn2nd">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 26">
+                <path fill="rgb(58,58,58)"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0s.41-1.08 0-1.49zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+            </svg>
+        </div>
+        <input placeholder="Search whole Flubel-Shop" type="text" name="maintxtsrchadmn" id="admnpnlmnsrchbr">
+    </div>
+    <div id="navbrcls">
+        <svg id="closebtnmn" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24">
+            <path fill="#ff5555"
+                d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" />
+        </svg>
+    </div>
+</div>
+<div id="searchResults">
+    <!-- <div id="mncntnrfrsrcrprdcts">
+        <div id="mningfrprdctssrch">
+            <img  idsrc="" alt="">
+        </div>
+        <div id="mnprdctsttlcntnr">
+            <div id="titleprdctsrch">T-Shirt Belarus</div>
+            <div id="spplrfrprdctndctgry">Flubel-Shop | Unisex</div>
+            <div id="pricefrprdc">65.00$</div>
+        </div>
+
+    </div>
+     -->
+</div>
+
 <div id="navbar">
     <div id="lftsdmnnvbr">
         <div id="mainwebttlflb">
@@ -63,3 +95,37 @@
         </div>
     </div>
 </div>
+
+<script>
+    iconnum1.addEventListener('click', () => {
+        document.getElementById('searchbrmn').style.marginTop = '0px'
+    })
+    closebtnmn.addEventListener('click', () => {
+        document.getElementById('searchbrmn').style.marginTop = '-70px'
+        document.getElementById('searchResults').style.marginTop = 'calc(-60vh - 200px)'
+    })
+
+
+    document.getElementById('admnpnlmnsrchbr').addEventListener('input', function () {
+        let query = this.value;
+
+        if (query.length > 2) {
+            fetch('searchProducts.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'query=' + encodeURIComponent(query)
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('searchResults').innerHTML = data;
+        document.getElementById('searchResults').style.marginTop = '0px'
+                });
+        } else {
+            document.getElementById('searchResults').innerHTML = '';
+            document.getElementById('searchResults').style.marginTop = 'calc(-60vh - 70px)' // Clear results if query is empty or too short
+        }
+    });
+
+</script>

@@ -283,6 +283,12 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
                                         name="product_supplier">
                                 </div>
                             </div>
+                            <div id="namaddrfrprdctbg">
+                                <div id="mnimgaddrprodttl">Tag*</div>
+                                <div id="maininptbgfrnmprdct">
+                                    <input type="text" id="product_tag" name="product_tag">
+                                </div>
+                            </div>
                             <div id="descaddrfrprdctbg">
                                 <div id="mnimgaddrprodttldesc">Description*</div>
                                 <div id="maininptbgfrnmprdctdesc">

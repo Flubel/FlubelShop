@@ -12,12 +12,13 @@ $productttl = $_POST['product_title'] ?? '';
 $productsplr = $_POST['product_supplier'] ?? '';
 $productdesc = $_POST['product_desc'] ?? '';
 $productctgry = $_POST['product_category'] ?? '';
+$producttag = $_POST['product_tag'] ?? '';
 
 // Insert the product into the `products` table
-$stmt = $conn->prepare("INSERT INTO `products` (`title`, `supplier`, `description`, `category`, `added_by`) VALUES (?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO `products` (`title`, `supplier`, `description`, `category`, `added_by`,`tag`) VALUES (?, ?, ?, ?, ?,?)");
 
 if ($stmt) {
-    $stmt->bind_param("sssss", $productttl, $productsplr, $productdesc, $productctgry, $_SESSION['adminEmail']);
+    $stmt->bind_param("ssssss", $productttl, $productsplr, $productdesc, $productctgry, $_SESSION['adminEmail'], $producttag);
 
     if ($stmt->execute()) {
         $product_id = $stmt->insert_id;
@@ -102,7 +103,23 @@ if ($stmt) {
             $_SESSION['upload_success'] = false;
         }
 
-        
+        if ($image1_data) {
+            $stmt = $conn->prepare("UPDATE products SET title_pic = ? WHERE id = ?");
+            if ($stmt) {
+                $stmt->bind_param("bi", $image1_data, $product_id);
+                $stmt->send_long_data(0, $image1_data);
+
+                if ($stmt->execute()) {
+                    echo "Title image updated successfully.";
+                } else {
+                    echo "Error updating title image: " . $stmt->error;
+                }
+
+                $stmt->close();
+            } else {
+                echo "Error preparing statement: " . $conn->error;
+            }
+        }
 
         $variations = $_POST['variations'] ?? [];
 
@@ -126,7 +143,40 @@ if ($stmt) {
                     if (!$stmt->execute()) {
                         echo "Error inserting variant: " . $stmt->error;
                     }
-                }   
+                }
+
+
+
+
+                $variant_sql = "SELECT xs, s, m, l, xl, 2xl, quantity,price FROM product_variants WHERE product_id = $product_id";
+                $variant_result = $conn->query($variant_sql);
+                $min_price = PHP_INT_MAX;
+                $max_price = PHP_INT_MIN;
+
+                while ($variant_row = $variant_result->fetch_assoc()) {
+                    if ($variant_row['price'] < $min_price) {
+                        $min_price = $variant_row['price'];
+                    }
+                    if ($variant_row['price'] > $max_price) {
+                        $max_price = $variant_row['price'];
+                    }
+                }
+                $price_range = ($min_price === $max_price) ? "$min_price$" : "$min_price$ - $max_price$";
+                $stmt1 = $conn->prepare("UPDATE products SET price = ? WHERE id = ?");
+                if ($stmt1) {
+                    $stmt1->bind_param("si", $price_range, $product_id);
+                    $stmt1->send_long_data(0, $price_range);
+
+                    if ($stmt1->execute()) {
+                        echo "Price updated successfully.";
+                    } else {
+                        echo "Error updating title image: " . $stmt1->error;
+                    }
+
+                    $stmt1->close();
+                } else {
+                    echo "Error preparing statement: " . $conn->error;
+                }
 
                 $stmt->close();
             } else {
@@ -134,6 +184,8 @@ if ($stmt) {
                 $_SESSION['upload_success'] = false;
             }
         }
+
+
 
     } else {
         echo "Error inserting product: " . $stmt->error;
