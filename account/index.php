@@ -8,6 +8,9 @@ if (isset($_SESSION['loggedInUser']) && $_SESSION['loggedInUser'] === true) {
 }
 
 ?>
+<?php
+include("../loader.php");
+?>
 
 <head>
     <meta charset="UTF-8">

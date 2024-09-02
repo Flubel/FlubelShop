@@ -1,6 +1,6 @@
 <?php
 
-include(__DIR__ . "/db_config.php");
+include("../db_config.php");
 
 $query = isset($_POST['query']) ? $conn->real_escape_string($_POST['query']) : '';
 
@@ -12,7 +12,7 @@ if ($query !== '') {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $productUrl = './product.php?id=' . urlencode($row['id']);
+            $productUrl = '../product.php?id=' . urlencode($row['id']);
 
 
             $img_result = $row['title_pic'];

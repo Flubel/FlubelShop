@@ -25,12 +25,12 @@ if ($result->num_rows > 0) {
         echo "ok";
         exit();
     } else {
-        // header("Location: index.php?error=wrongpass&wreml=$adminEmail");
-        echo "no 1";
+        header("Location: index.php?error=wrongpass&wreml=$adminEmail");
+        // echo "no 1";
         exit();
     }
 } else {
-    // header("Location: index.php?error=wrongemail&wreml=$adminEmail");
-        echo "no 2";
+    header("Location: index.php?error=wrongemail&wreml=$adminEmail");
+        // echo "no 2";
     exit();
 }

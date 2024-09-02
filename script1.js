@@ -6,3 +6,12 @@ iconnum2.addEventListener('click', () => {
 iconnum3.addEventListener('click', () => {
     window.location.href = '/account';
 });
+
+
+
+iconnum4.addEventListener('click', () => {
+    window.location.href = '/cart.php';
+});
+mainwebttlflb.addEventListener('click', () => {
+    window.location.href = '/';
+});

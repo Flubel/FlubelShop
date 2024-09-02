@@ -29,7 +29,7 @@
     </div>
      -->
 </div>
-
+<div id="fauxnavbr"></div>
 <div id="navbar">
     <div id="lftsdmnnvbr">
         <div id="mainwebttlflb">
@@ -97,6 +97,24 @@
 </div>
 
 <script>
+    console.log('ok')
+    iconnum2.addEventListener('click', () => {
+        window.location.href = '/wishlist';
+    });
+
+    iconnum3.addEventListener('click', () => {
+        window.location.href = '/account';
+    });
+
+
+
+    iconnum4.addEventListener('click', () => {
+        window.location.href = '/cart.php';
+    });
+    mainwebttlflb.addEventListener('click', () => {
+        window.location.href = '/';
+    });
+
     iconnum1.addEventListener('click', () => {
         document.getElementById('searchbrmn').style.marginTop = '0px'
     })
@@ -120,7 +138,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('searchResults').innerHTML = data;
-        document.getElementById('searchResults').style.marginTop = '0px'
+                    document.getElementById('searchResults').style.marginTop = '0px'
                 });
         } else {
             document.getElementById('searchResults').innerHTML = '';
